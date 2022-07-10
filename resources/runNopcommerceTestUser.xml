@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Nopcommerce - User" parallel="tests" thread-count="2">
+<parameter name="envName" value="local"/>
+<parameter name="serverName" value="user"/>
+
+	<listeners>
+	<listener class-name="reportConfig.MethodListener" />
+		<listener class-name="reportConfig.ReportNGListener" />
+<!-- 		<listener class-name="reportConfig.ExtentTestListener" /> -->
+<!-- 		<listener class-name="reportConfig.AllureTestListener" /> -->
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<test name="Run on chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.nopcommerce.common.Common_01_Register" />			
+			<class name="com.nopcommerce.user.User_01_Register" />						
+			<class name="com.nopcommerce.user.User_02_Login" />						
+			<class name="com.nopcommerce.user.User_03_My_Account" />						
+			<class name="com.nopcommerce.user.User_04_Search_AdvanceSearch" />						
+			<class name="com.nopcommerce.user.User_05_Sort_Display_Paging" />						
+			<class name="com.nopcommerce.user.User_06_Whishlist_Compare_RecentView" />						
+			<class name="com.nopcommerce.user.User_07_Order" />						
+		</classes>
+	</test>
+
+</suite> 
