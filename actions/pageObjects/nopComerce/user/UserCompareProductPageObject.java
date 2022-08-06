@@ -48,14 +48,7 @@ public class UserCompareProductPageObject extends BasePage {
 		return getElementText(driver, CompareProductPageUI.NO_DATA_MESSAGE);
 	}
 
-	public boolean isProductName1NotDiplayed(String productName) {
-		waitForElementUndisplayed(driver, WishlistPageUI.DYNAMIC_PRODUCT_NAME, productName);
-		return true;
+	public boolean isProductNameNotDiplayed(String productName) {
+		return isElementUndisplayed(driver, WishlistPageUI.DYNAMIC_PRODUCT_NAME, productName);
 	}
-
-	public boolean isProductName2NotDiplayed(String productName) {
-		waitForElementUndisplayed(driver, WishlistPageUI.DYNAMIC_PRODUCT_NAME, productName);
-		return true;
-	}
-
 }

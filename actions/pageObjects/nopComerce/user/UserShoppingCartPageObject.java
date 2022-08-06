@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import commons.PageGenerator;
 import pageUIs.nopComerce.user.ShoppingCartPageUI;
+import pageUIs.nopComerce.user.WishlistPageUI;
 
 public class UserShoppingCartPageObject extends BasePage {
 	WebDriver driver;
@@ -51,12 +52,7 @@ public class UserShoppingCartPageObject extends BasePage {
 	}
 
 	public boolean isProductNameNotDiplayed(String productName) {
-		try {
-			waitForElementUndisplayed(driver, ShoppingCartPageUI.PRODUCT_IN_CART_PAGE, productName);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
+		return isElementUndisplayed(driver, WishlistPageUI.DYNAMIC_PRODUCT_NAME, productName);
 	}
 
 	public void inputToQuantiTyTextbox(String quantity) {

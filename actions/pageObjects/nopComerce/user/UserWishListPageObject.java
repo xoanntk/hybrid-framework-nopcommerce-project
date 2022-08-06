@@ -19,12 +19,7 @@ public class UserWishListPageObject extends BasePage {
 	}
 
 	public boolean isProductNameNotDiplayed(String productName) {
-		try {
-			waitForElementUndisplayed(driver, WishlistPageUI.DYNAMIC_PRODUCT_NAME, productName);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
+		return isElementUndisplayed(driver, WishlistPageUI.DYNAMIC_PRODUCT_NAME, productName);
 	}
 
 	public void clickToShareLink() {

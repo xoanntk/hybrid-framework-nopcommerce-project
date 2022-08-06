@@ -347,6 +347,20 @@ public class BasePage {
 		}
 	}
 
+	public boolean isElementUndisplayed(WebDriver driver, String locatorType, String... dynamicvalues) {
+		overrideGlobalTimeout(driver, shortTimeOut);
+		List<WebElement> elements = getListWebElement(driver, getDynamicXpath(locatorType, dynamicvalues));
+		overrideGlobalTimeout(driver, longTimeOut);
+
+		if (elements.size() == 0) {
+			return true;
+		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public void overrideGlobalTimeout(WebDriver driver, long timeOut) {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}

@@ -198,8 +198,8 @@ public class User_06_Whishlist_Compare_RecentView extends BaseTest {
 		verifyEquals(compareProductPage.getMessageDisplayed(), "You have no items to compare.");
 
 		log.info("Wishlist_04 - Step 10: Verify product is not displayed on comparison page");
-		verifyTrue(compareProductPage.isProductName1NotDiplayed(productName1));
-		verifyTrue(compareProductPage.isProductName2NotDiplayed(productName2));
+		verifyTrue(compareProductPage.isProductNameNotDiplayed(productName1));
+		verifyTrue(compareProductPage.isProductNameNotDiplayed(productName2));
 	}
 
 	@Test
